@@ -1,0 +1,57 @@
+@import 'common';
+
+$controls-color: #A3223B;
+
+.single{
+  display: flex;
+  margin: 10%;
+  flex-wrap: wrap;
+  @include card();
+  
+
+  h1{
+    margin: 10px;
+  }
+
+  img{
+    width: 100%;
+    min-width: 200px;
+    overflow: hidden;
+    flex: 1;
+  }
+}
+
+.recipeDetails{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* child of single */
+.ingredients{
+    form{
+      display: flex;
+      flex-direction: column;
+
+      input{
+        outline: none;
+        border-radius: 3px;
+        margin: 0 0 5px 0;
+      }
+
+      i{
+        color: $controls-color;
+        margin-left: 5px;
+      }
+    }
+}
+
+.buttonList{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+

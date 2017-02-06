@@ -1,0 +1,22 @@
+
+@mixin card(){
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  background: white;
+}
+
+.defaultBtn{
+  margin: 12px;
+  background-color:  #A3223B;
+  color: #EDFAC1;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 7px 10px rgba(0,0,0,.19);
+
+  &:hover{
+    background-color:  lighten(#A3223B, 20%);
+    color: #EDFAC1;
+  }
+}

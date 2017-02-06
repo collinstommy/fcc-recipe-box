@@ -1,0 +1,75 @@
+import React from 'react';
+import { browserHistory } from 'react-router';
+import * as actions from '../actions';
+
+export default class AddRecipe extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addIngredient = this.addIngredient.bind(this);
+    this.state = {
+      ingredients: []
+    };
+  }
+
+  addIngredient() {
+    const input = this.ingredientInput.value;
+    if(input){
+      const ingredients = this.state.ingredients;
+      ingredients.push(input);
+      this.setState({
+        ingredients: ingredients
+      });
+      this.ingredientInput.value = '';
+    }
+  }
+
+  onDeleteIngredient(item) {
+    const ingredientsArray = this.state.ingredients;
+    ingredientsArray.splice(ingredientsArray.indexOf(item), 1);
+    this.setState({
+      ingredients: ingredientsArray
+    });
+  }
+
+  renderIngredientList(item, index) {
+    return (
+      <div>
+        <input type='text' value={item} key={index} />
+        <i className="fa fa-trash" aria-hidden="true"
+          onClick={() => this.onDeleteIngredient(item)}></i>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div className="single">
+        <div className="ingredients">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              this.props.addRecipe(this.recipeName.value, this.state.ingredients, this.imageURL.value);
+              browserHistory.push('/');
+            }}
+            >
+            Name
+          <input ref={(node) => { this.recipeName = node; } } />
+            Image Url
+          <input ref={(node) => { this.imageURL = node; } } />
+            Ingredients
+          {this.state.ingredients.map(this.renderIngredientList.bind(this))}
+            <input ref={(node) => { this.ingredientInput = node; } } />
+            <i className="fa fa-lg fa-plus" aria-hidden="true"
+              onClick={this.addIngredient} ></i>
+            <button type="submit" className='saveBtn'>
+              Add Recipe
+            </button>
+          </form>
+
+
+        </div>
+      </div>
+    )
+  }
+}
+
