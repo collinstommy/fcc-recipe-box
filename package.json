@@ -11,15 +11,9 @@
     "url": "https://github.com/collinstommy/fcc-recipe-box.git"
   },
   "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "reload",
-    "live",
-    "edit",
-    "webpack"
+    "react"
   ],
-  "author": "Noah-Jerome Lotzer <n.lotzer@neusta.de>",
+  "author": "Thomas Collins",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/collinstommy/fcc-recipe-box/issues"
@@ -37,7 +31,9 @@
     "css-loader": "0.23.1",
     "eslint": "2.7.0",
     "eslint-plugin-react": "5.2.2",
+    "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "3.8.0",
+    "postcss-loader": "^1.2.2",
     "sass-loader": "4.0.0",
     "sockjs-client": "^1.1.1",
     "style-loader": "0.13.1",
